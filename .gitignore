@@ -1,0 +1,17 @@
+# Data directories
+downloaded-images/
+output/
+input/
+
+# Cache
+.reducer-cache/
+
+# Credentials and config (contains sensitive/project-specific data)
+dw.json
+reducer-config.json
+
+# Dependencies
+node_modules/
+
+# Backups (created during migration)
+backups/

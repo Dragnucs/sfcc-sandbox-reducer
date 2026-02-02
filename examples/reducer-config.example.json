@@ -1,0 +1,26 @@
+{
+    "webdav_base": "https://YOUR-SANDBOX.demandware.net/on/demandware.servlet/webdav/Sites/Catalogs/YOUR_MASTER_CATALOG/default",
+    "input": {
+        "master_catalog": "./catalogs/BRAND_master/catalog.xml",
+        "navigation_catalogs": "./catalogs/BRAND_*_navigation/catalog.xml",
+        "pricebooks": "./pricebooks/*.xml",
+        "inventories": "./inventory-lists/*.xml"
+    },
+    "output": {
+        "directory": "./output"
+    },
+    "filters": {
+        "keep_online_products": true,
+        "sites_to_check": [
+            "SITE_FR",
+            "SITE_UK",
+            "SITE_DE",
+            "SITE_ES",
+            "SITE_IT",
+            "SITE_BE"
+        ],
+        "always_keep": [],
+        "always_remove": [],
+        "max_products": 10000
+    }
+}
