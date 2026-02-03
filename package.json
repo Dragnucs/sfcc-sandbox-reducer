@@ -1,52 +1,52 @@
 {
-    "name": "@touhami-viseo/sfcc-sandbox-reducer",
-    "version": "0.0.3",
-    "description": "High-performance SFCC catalog, inventory, and pricebook reducer for sandbox optimization",
-    "type": "module",
-    "main": "src/reducer/index.js",
-    "bin": {
-        "sfcc-reduce": "bin/reduce.js",
-        "sfcc-download-images": "bin/download-images.js"
-    },
-    "publishConfig": {
-        "registry": "https://npm.pkg.github.com"
-    },
-    "scripts": {
-        "reduce": "node bin/reduce.js",
-        "download-images": "node bin/download-images.js",
-        "check": "biome check .",
-        "check:write": "biome check --write ."
-    },
-    "keywords": [
-        "sfcc",
-        "salesforce",
-        "commerce-cloud",
-        "catalog",
-        "reducer",
-        "sandbox",
-        "demandware"
-    ],
-    "author": "Touhami MAHDI",
-    "license": "AGPL-3.0-or-later",
-    "engines": {
-        "node": ">=18.0.0"
-    },
-    "dependencies": {
-        "commander": "^12.1.0",
-        "glob": "^11.0.0",
-        "sax": "^1.4.1"
-    },
-    "devDependencies": {
-        "@biomejs/biome": "^1.9.4"
-    },
-    "repository": {
-        "type": "git",
-        "url": ""
-    },
-    "files": [
-        "bin/",
-        "src/",
-        "examples/",
-        "README.md"
-    ]
+  "name": "@Dragnucs/sfcc-sandbox-reducer",
+  "version": "0.0.3",
+  "description": "High-performance SFCC catalog, inventory, and pricebook reducer for sandbox optimization",
+  "type": "module",
+  "main": "src/reducer/index.js",
+  "bin": {
+    "sfcc-reduce": "bin/reduce.js",
+    "sfcc-download-images": "bin/download-images.js"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "scripts": {
+    "reduce": "node bin/reduce.js",
+    "download-images": "node bin/download-images.js",
+    "check": "biome check .",
+    "check:write": "biome check --write ."
+  },
+  "keywords": [
+    "sfcc",
+    "salesforce",
+    "commerce-cloud",
+    "catalog",
+    "reducer",
+    "sandbox",
+    "demandware"
+  ],
+  "author": "Touhami MAHDI",
+  "license": "AGPL-3.0-or-later",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "glob": "^11.0.0",
+    "sax": "^1.4.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "examples/",
+    "README.md"
+  ]
 }
