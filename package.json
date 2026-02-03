@@ -1,6 +1,6 @@
 {
   "name": "sfcc-sandbox-reducer",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "High-performance SFCC catalog, inventory, and pricebook reducer for sandbox optimization",
   "type": "module",
   "main": "src/reducer/index.js",
