@@ -1,5 +1,5 @@
 {
-  "name": "@dragnucs/sfcc-sandbox-reducer",
+  "name": "sfcc-sandbox-reducer",
   "version": "0.0.5",
   "description": "High-performance SFCC catalog, inventory, and pricebook reducer for sandbox optimization",
   "type": "module",
