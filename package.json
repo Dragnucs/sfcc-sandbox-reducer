@@ -1,6 +1,6 @@
 {
     "name": "@touhami-viseo/sfcc-sandbox-reducer",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "High-performance SFCC catalog, inventory, and pricebook reducer for sandbox optimization",
     "type": "module",
     "main": "src/reducer/index.js",
