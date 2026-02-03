@@ -1,5 +1,5 @@
 {
-  "name": "@Dragnucs/sfcc-sandbox-reducer",
+  "name": "@dragnucs/sfcc-sandbox-reducer",
   "version": "0.0.4",
   "description": "High-performance SFCC catalog, inventory, and pricebook reducer for sandbox optimization",
   "type": "module",
@@ -9,7 +9,8 @@
     "sfcc-download-images": "bin/download-images.js"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
   },
   "scripts": {
     "reduce": "node bin/reduce.js",
