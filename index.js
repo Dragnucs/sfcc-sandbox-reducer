@@ -8,11 +8,13 @@ import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
 import downloadImagesCommand from './commands/download-images.js';
+import initCommand from './commands/init.js';
 import reduceCommand from './commands/reduce.js';
 
 yargs(hideBin(process.argv))
     .scriptName('sfcc-sandbox-reducer')
     .usage('$0 <command> [options]')
+    .command(initCommand)
     .command(reduceCommand)
     .command(downloadImagesCommand)
     .demandCommand(1, 'You must specify a command')

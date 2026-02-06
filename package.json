@@ -6,6 +6,7 @@
   "main": "index.js",
   "bin": {
     "sfcc-sandbox-reducer": "./index.js",
+    "sfcc-init": "./bin/init.js",
     "sfcc-reduce": "./bin/reduce.js",
     "sfcc-download-images": "./bin/download-images.js"
   },
@@ -15,6 +16,7 @@
   },
   "scripts": {
     "start": "node index.js",
+    "init": "node index.js init",
     "reduce": "node index.js reduce",
     "download-images": "node index.js download-images",
     "test": "node --test",

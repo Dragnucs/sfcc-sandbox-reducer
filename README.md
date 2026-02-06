@@ -52,9 +52,14 @@ npm link  # Makes commands available globally
 1. **Create configuration files** in your project directory:
 
 ```bash
-# Copy example configs
-cp node_modules/sfcc-sandbox-reducer/examples/reducer-config.example.json reducer-config.json
-cp node_modules/sfcc-sandbox-reducer/examples/dw.example.json dw.json
+# Interactive configuration wizard
+sfcc-sandbox-reducer init
+
+# Or with defaults (non-interactive)
+sfcc-sandbox-reducer init --yes
+
+# Or with specific options
+sfcc-sandbox-reducer init --hostname xxxx.dx.commercecloud.salesforce.com --catalog brand_master
 ```
 
 2. **Edit the configuration files** with your specific values.
@@ -211,12 +216,48 @@ sfcc-sandbox-reducer download-images --concurrency 20
 sfcc-download-images
 ```
 
+#### Configuration Init
+
+```bash
+sfcc-sandbox-reducer init [options]
+
+Options:
+  -y, --yes              Skip prompts and use defaults (non-interactive)
+  -f, --force            Overwrite existing configuration files
+      --hostname         SFCC sandbox hostname
+      --catalog          Master catalog name
+      --sites            Comma-separated list of site IDs
+      --max-products     Maximum number of products to keep (default: 10000)
+      --with-credentials Also create dw.json credentials file
+  -h, --help             Display help
+```
+
+**Examples:**
+
+```bash
+# Interactive configuration wizard
+sfcc-sandbox-reducer init
+
+# Create config with all defaults
+sfcc-sandbox-reducer init --yes
+
+# Non-interactive with specific options
+sfcc-sandbox-reducer init --hostname xxxx.dx.commercecloud.salesforce.com --catalog brand_master --sites FR,UK
+
+# Force overwrite existing config
+sfcc-sandbox-reducer init --force
+
+# Shortcut command (if installed globally)
+sfcc-init
+```
+
 ### Command Aliases
 
 | Command | Aliases |
 |---------|---------|
 | `reduce` | `r` |
 | `download-images` | `dl`, `images` |
+| `init` | `i`, `create`, `setup` |
 
 ## How It Works
 
