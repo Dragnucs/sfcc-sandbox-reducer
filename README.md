@@ -128,28 +128,95 @@ sfcc-download-images
 
 ## CLI Usage
 
-### Catalog Reducer
+### Main CLI
 
 ```bash
-sfcc-reduce [options]
+# Using npx
+npx sfcc-sandbox-reducer <command>
+
+# Or add scripts to your package.json
+```
+
+### package.json Scripts (Recommended)
+
+Add these scripts to your project's `package.json`:
+
+```json
+{
+  "scripts": {
+    "reduce": "sfcc-sandbox-reducer reduce",
+    "download-images": "sfcc-sandbox-reducer download-images"
+  }
+}
+```
+
+### Commands
+
+#### Catalog Reducer
+
+```bash
+sfcc-sandbox-reducer reduce [options]
 
 Options:
-  -V, --version          Output version number
-  -c, --config <path>    Path to configuration file (default: "reducer-config.json")
-  -o, --output <path>    Output directory (default: "output")
-  -v, --verbose          Enable verbose logging
-  --dry-run              Analyze only, don't write files
-  -h, --help             Display help
+  -c, --config   Path to configuration file (default: "reducer-config.json")
+  -o, --output   Output directory (default: "output")
+  -V, --verbose  Enable verbose logging
+  --dry-run      Analyze only, don't write files
+  -h, --help     Display help
 ```
 
-### Image Downloader
+**Examples:**
 
 ```bash
-sfcc-download-images
+# Run with default config
+sfcc-sandbox-reducer reduce
 
-# With increased concurrency
-CONCURRENCY=20 sfcc-download-images
+# Run with custom config and output
+sfcc-sandbox-reducer reduce --config my-config.json --output reduced
+
+# Preview without writing files
+sfcc-sandbox-reducer reduce --dry-run
+
+# Shortcut command (if installed globally)
+sfcc-reduce --config reducer-config.json
 ```
+
+#### Image Downloader
+
+```bash
+sfcc-sandbox-reducer download-images [options]
+
+Options:
+  -c, --category     Category ID to download images for
+      --catalog      Navigation catalog name
+  -o, --output       Output directory (default: "downloaded-images")
+      --concurrency  Number of parallel downloads (default: 10)
+  -V, --verbose      Enable verbose logging
+  -h, --help         Display help
+```
+
+**Examples:**
+
+```bash
+# Interactive mode (prompts for catalog and category)
+sfcc-sandbox-reducer download-images
+
+# Non-interactive mode
+sfcc-sandbox-reducer download-images --catalog BRAND_FR_navigation --category mens-clothing
+
+# With higher concurrency
+sfcc-sandbox-reducer download-images --concurrency 20
+
+# Shortcut command (if installed globally)
+sfcc-download-images
+```
+
+### Command Aliases
+
+| Command | Aliases |
+|---------|---------|
+| `reduce` | `r` |
+| `download-images` | `dl`, `images` |
 
 ## How It Works
 
@@ -246,7 +313,8 @@ Size Reduction:
 ## Programmatic Usage
 
 ```javascript
-import { CatalogReducer, loadConfig } from 'sfcc-sandbox-reducer';
+import { CatalogReducer } from 'sfcc-sandbox-reducer/lib/reducer.js';
+import { loadConfig } from 'sfcc-sandbox-reducer/lib/config.js';
 
 const config = await loadConfig('reducer-config.json');
 const reducer = new CatalogReducer(config, 'output', { verbose: true });

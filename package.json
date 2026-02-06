@@ -3,18 +3,21 @@
   "version": "0.0.6",
   "description": "High-performance SFCC catalog, inventory, and pricebook reducer for sandbox optimization",
   "type": "module",
-  "main": "src/reducer/index.js",
+  "main": "index.js",
   "bin": {
-    "sfcc-reduce": "bin/reduce.js",
-    "sfcc-download-images": "bin/download-images.js"
+    "sfcc-sandbox-reducer": "./index.js",
+    "sfcc-reduce": "./bin/reduce.js",
+    "sfcc-download-images": "./bin/download-images.js"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
     "access": "public"
   },
   "scripts": {
-    "reduce": "node bin/reduce.js",
-    "download-images": "node bin/download-images.js",
+    "start": "node index.js",
+    "reduce": "node index.js reduce",
+    "download-images": "node index.js download-images",
+    "test": "node --test",
     "check": "biome check .",
     "check:write": "biome check --write ."
   },
@@ -30,23 +33,25 @@
   "author": "Touhami MAHDI",
   "license": "AGPL-3.0-or-later",
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=18"
   },
   "dependencies": {
-    "commander": "^12.1.0",
     "glob": "^11.0.0",
-    "sax": "^1.4.1"
+    "sax": "^1.4.1",
+    "yargs": "^17.7.2"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/Dragnucs/sfcc-sandbox-reducer"
   },
   "files": [
+    "index.js",
     "bin/",
-    "src/",
+    "commands/",
+    "lib/",
     "examples/",
     "README.md"
   ]
